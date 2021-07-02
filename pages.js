@@ -44,7 +44,7 @@ PATH.fs.readdir(TYPE, function(err, response) {
 
 	}, function() {
 		arr.quicksort('name');
-		PATH.fs.writeFile('cdn/pages/db.json', JSON.stringify(arr, null, '\t'), NOOP);
+		PATH.fs.writeFile('cdn/' + TYPE + '/db.json', JSON.stringify(arr, null, '\t'), NOOP);
 	});
 
 });

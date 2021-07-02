@@ -6,7 +6,7 @@
 		"name": "Cards",
 		"author": "Peter Širka",
 		"icon": "",
-		"preview": "https://github.com/totaljs/parts/blob/main/pages/cards/picture.jpg?raw=true",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/cards/preview.jpg?raw=true",
 		"color": "",
 		"version": "1"
 	},
@@ -17,7 +17,7 @@
 		"name": "Empty space",
 		"author": "Peter Širka",
 		"icon": "",
-		"preview": "https://github.com/totaljs/parts/blob/main/pages/emptyspace/picture.jpg?raw=true",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/emptyspace/preview.jpg?raw=true",
 		"color": "",
 		"version": "1"
 	}

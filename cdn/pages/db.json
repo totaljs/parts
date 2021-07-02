@@ -1,12 +1,23 @@
 [
 	{
 		"id": "cards",
-		"size": 6163,
+		"size": 6158,
 		"group": "Content",
 		"name": "Cards",
 		"author": "Peter Širka",
 		"icon": "",
-		"preview": "https://github.com/totaljs/widgets/blob/master/ContentCards/picture.jpg?raw=true",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/cards/picture.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "emptyspace",
+		"size": 321,
+		"group": "Content",
+		"name": "Empty space",
+		"author": "Peter Širka",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/emptyspace/picture.jpg?raw=true",
 		"color": "",
 		"version": "1"
 	}

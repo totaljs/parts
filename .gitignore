@@ -1,1 +1,4 @@
-/cdn/*
+/cdn/pages/*.html
+/cdn/reports/*.html
+/cdn/forms/*.html
+/cdn/newsletter/*.html

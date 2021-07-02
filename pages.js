@@ -11,6 +11,14 @@ PATH.fs.readdir(TYPE, function(err, response) {
 		return obj;
 	};
 
+	try {
+		PATH.fs.mkdirSync('cdn');
+	} catch(e) {}
+
+	try {
+		PATH.fs.mkdirSync('cdn/pages');
+	} catch(e) {}
+
 	response.wait(function(filename, next) {
 
 		var data = {};

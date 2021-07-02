@@ -17,6 +17,8 @@ PATH.fs.readdir(TYPE, function(err, response) {
 		data.id = filename;
 
 		PATH.fs.readFile(TYPE + '/' + filename + '/index.html', function(err, response) {
+
+			data.size = response.length;
 			response = response.toString('utf8');
 
 			var version = response.match(/exports\.version.*?;/);

@@ -60,7 +60,7 @@
 					builder.push('</div></div>');
 
 				builder.push('</div>');
-				next(html.substring(0, html.indexOf('<div class="totaljs')) + builder.join('') + '</div>');
+				next(builder.join(''));
 
 			}).on('error', function() {
 				next('');

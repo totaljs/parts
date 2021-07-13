@@ -1,7 +1,7 @@
 [
 	{
 		"id": "cards",
-		"size": 6177,
+		"size": 6155,
 		"group": "Content",
 		"name": "Cards",
 		"author": "Peter Širka",
@@ -18,6 +18,17 @@
 		"author": "Peter Širka",
 		"icon": "",
 		"preview": "https://github.com/totaljs/parts/blob/main/pages/emptyspace/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "rssreader",
+		"size": 4092,
+		"group": "Content",
+		"name": "RSS Reader",
+		"author": "Peter Širka",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/rssreader/preview.jpg?raw=true",
 		"color": "",
 		"version": "1"
 	}

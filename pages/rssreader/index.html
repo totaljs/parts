@@ -19,7 +19,7 @@
 			var arr = [];
 			var protocol = /^(https|http:\\\\)+/i;
 
-			response.on('data', U.streamer('<item>', '</item>', function(item) {
+			response.stream.on('data', U.streamer('<item>', '</item>', function(item) {
 
 				item = item.parseXML(true);
 

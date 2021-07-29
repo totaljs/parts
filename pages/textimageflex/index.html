@@ -5,7 +5,7 @@
 	exports.version = '1';
 	exports.group = 'Content';
 	exports.preview = 'https://github.com/totaljs/parts/blob/main/pages/textimageflex/preview.jpg?raw=true';
-    exports.config = [{ align: 'left' }, { padding: 'small' }, { titlesize: false }];
+    exports.config = { align: 'left', padding: 'small', titlesize: false };
 </script>
 
 <style>
@@ -23,7 +23,6 @@
 	@media(max-width: 768px) {
 		.w-textimageflex .flexrow { flex-direction: column; align-items: flex-start; }
 		.w-textimageflex .flexrow img { margin-bottom: 30px; }
-
 		.w-textimageflex-right .flexitem:first-child { order: 1; }
 		.w-textimageflex-right .flexitem:last-child { order: 2; }
 	}
@@ -44,7 +43,7 @@
                         name: 'padding',
                         text: 'Padding',
                         type: 'dropdown',
-                        items: [{ text: 'Big', id: 'big' }, { text: 'Medium', id: 'medium' }, { text: 'Small', id: 'small' }]
+                        items: [{ id: 'big', name: 'Big' }, { id: 'medium', name: 'Medium' }, { id: 'small', name: 'Small' }]
                     },
                     {
                         name: 'titlesize',

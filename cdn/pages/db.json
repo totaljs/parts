@@ -1,5 +1,27 @@
 [
 	{
+		"id": "alert2",
+		"size": 3367,
+		"group": "Content",
+		"name": "Alert 2",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/alert2/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "caption",
+		"size": 520,
+		"group": "Content",
+		"name": "Caption",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/caption/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
 		"id": "cards",
 		"size": 6154,
 		"group": "Content",
@@ -7,6 +29,28 @@
 		"author": "Dodo Marton",
 		"icon": "",
 		"preview": "https://github.com/totaljs/parts/blob/main/pages/cards/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "contact2",
+		"size": 3235,
+		"group": "Content",
+		"name": "Contact 2",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/contact2/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "contactbutton",
+		"size": 2905,
+		"group": "Content",
+		"name": "Contact Button",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/contactbutton/preview.jpg?raw=true",
 		"color": "",
 		"version": "1"
 	},
@@ -44,6 +88,28 @@
 		"version": "1"
 	},
 	{
+		"id": "h2",
+		"size": 2011,
+		"group": "Content",
+		"name": "H2",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/h2/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "h3",
+		"size": 2011,
+		"group": "Content",
+		"name": "H3",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/h3/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
 		"id": "headline",
 		"size": 2073,
 		"group": "Content",
@@ -51,6 +117,72 @@
 		"author": "Peter Širka",
 		"icon": "",
 		"preview": "https://github.com/totaljs/parts/blob/main/pages/headline/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "image",
+		"size": 1723,
+		"group": "Content",
+		"name": "Image",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/image/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "imageheader",
+		"size": 4157,
+		"group": "Content",
+		"name": "Image Header",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/imageheader/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "images",
+		"size": 5271,
+		"group": "Content",
+		"name": "Images",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/images/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "line",
+		"size": 395,
+		"group": "Content",
+		"name": "Line",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/line/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "linkbutton",
+		"size": 3523,
+		"group": "Content",
+		"name": "Link Button",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/linkbutton/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "linkbutton2",
+		"size": 2675,
+		"group": "Content",
+		"name": "Link Button 2",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/linkbutton2/preview.jpg?raw=true",
 		"color": "",
 		"version": "1"
 	},
@@ -66,6 +198,61 @@
 		"version": "1"
 	},
 	{
+		"id": "links2",
+		"size": 1795,
+		"group": "Content",
+		"name": "Links 2",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/links2/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "list3",
+		"size": 5299,
+		"group": "Content",
+		"name": "List 3",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/list3/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "logos",
+		"size": 30951,
+		"group": "Content",
+		"name": "Logos",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/logos/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "paragraph",
+		"size": 1959,
+		"group": "Content",
+		"name": "Paragraph",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/paragraph/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "paragraph2",
+		"size": 2142,
+		"group": "Content",
+		"name": "Paragraph 2",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/paragraph2/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
 		"id": "properties",
 		"size": 1431,
 		"group": "Content",
@@ -73,6 +260,17 @@
 		"author": "Peter Širka",
 		"icon": "",
 		"preview": "https://github.com/totaljs/parts/blob/main/pages/properties/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "quote",
+		"size": 2478,
+		"group": "Content",
+		"name": "Quote",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/quote/preview.jpg?raw=true",
 		"color": "",
 		"version": "1"
 	},
@@ -88,8 +286,41 @@
 		"version": "1"
 	},
 	{
+		"id": "socialbuttons",
+		"size": 1427,
+		"group": "Content",
+		"name": "Social Buttons",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/socialbuttons/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "table",
+		"size": 4876,
+		"group": "Content",
+		"name": "Table",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/table/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "tabs",
+		"size": 4069,
+		"group": "Content",
+		"name": "Tabs",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/tabs/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
 		"id": "textimageflex",
-		"size": 3625,
+		"size": 3614,
 		"group": "Content",
 		"name": "Text Image Flex",
 		"author": "Dodo Marton",

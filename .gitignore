@@ -2,3 +2,4 @@
 /cdn/reports/*.html
 /cdn/forms/*.html
 /cdn/newsletter/*.html
+.DS_Store

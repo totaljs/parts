@@ -1,10 +1,10 @@
 [
 	{
 		"id": "cards",
-		"size": 6155,
+		"size": 6154,
 		"group": "Content",
 		"name": "Cards",
-		"author": "Peter Širka",
+		"author": "Dodo Marton",
 		"icon": "",
 		"preview": "https://github.com/totaljs/parts/blob/main/pages/cards/preview.jpg?raw=true",
 		"color": "",
@@ -22,6 +22,61 @@
 		"version": "1"
 	},
 	{
+		"id": "features4",
+		"size": 5448,
+		"group": "Content",
+		"name": "Features 4",
+		"author": "Peter Širka",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/features4/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "h1",
+		"size": 2011,
+		"group": "Content",
+		"name": "H1",
+		"author": "Peter Širka",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/h1/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "headline",
+		"size": 2073,
+		"group": "Content",
+		"name": "Headline",
+		"author": "Peter Širka",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/headline/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "linkcards",
+		"size": 4203,
+		"group": "Content",
+		"name": "Link Cards",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/linkcards/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "properties",
+		"size": 1431,
+		"group": "Content",
+		"name": "Properties",
+		"author": "Peter Širka",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/properties/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
 		"id": "rssreader",
 		"size": 4031,
 		"group": "Content",
@@ -29,6 +84,17 @@
 		"author": "Peter Širka",
 		"icon": "",
 		"preview": "https://github.com/totaljs/parts/blob/main/pages/rssreader/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "textimageflex",
+		"size": 3625,
+		"group": "Content",
+		"name": "Text Image Flex",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/textimageflex/preview.jpg?raw=true",
 		"color": "",
 		"version": "1"
 	}

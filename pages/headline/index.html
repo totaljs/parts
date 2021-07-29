@@ -32,13 +32,13 @@
             <script>
                 exports.save = function(config, el) {
                     var container = el.find('.w-headline');
-                        switch (options.align) {
+                        switch (config.align) {
                             case 'left':
                                 container.rclass2('w-headline-');
                                 break;
                             case 'right':
                             case 'center':
-                                container.rclass2('w-headline-').aclass('w-headline-' + options.align);
+                                container.rclass2('w-headline-').aclass('w-headline-' + config.align);
                                 break;
                         }
                     }

@@ -11,6 +11,17 @@
 		"version": "1"
 	},
 	{
+		"id": "article",
+		"size": 2782,
+		"group": "Content",
+		"name": "Article",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/article/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
 		"id": "caption",
 		"size": 520,
 		"group": "Content",
@@ -62,6 +73,39 @@
 		"author": "Peter Širka",
 		"icon": "",
 		"preview": "https://github.com/totaljs/parts/blob/main/pages/emptyspace/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "expansionpanel",
+		"size": 2364,
+		"group": "Content",
+		"name": "Expansion Panel 2",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/expansionpanel/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "expansionpanel2",
+		"size": 2220,
+		"group": "Content",
+		"name": "Expansion Panel 2",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/expanstionpanel2/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "features",
+		"size": 3880,
+		"group": "Content",
+		"name": "Features",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/features/preview.jpg?raw=true",
 		"color": "",
 		"version": "1"
 	},
@@ -293,6 +337,17 @@
 		"author": "Dodo Marton",
 		"icon": "",
 		"preview": "https://github.com/totaljs/parts/blob/main/pages/socialbuttons/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "tabmenu",
+		"size": 5636,
+		"group": "Content",
+		"name": "Tab Menu",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/tabmenu/preview.jpg?raw=true",
 		"color": "",
 		"version": "1"
 	},

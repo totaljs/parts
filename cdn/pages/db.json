@@ -44,6 +44,50 @@
 		"version": "1"
 	},
 	{
+		"id": "columns100",
+		"size": 335,
+		"group": "Content",
+		"name": "Columns 100%",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/columns100/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "columns3070",
+		"size": 458,
+		"group": "Content",
+		"name": "Columns 30% 70%",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/columns3070/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "columns5050",
+		"size": 466,
+		"group": "Content",
+		"name": "Columns 50% 50%",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/columns5050/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "columns7030",
+		"size": 458,
+		"group": "Content",
+		"name": "Columns 70% 30%",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/columns7030/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
 		"id": "contact2",
 		"size": 3235,
 		"group": "Content",
@@ -62,6 +106,17 @@
 		"author": "Dodo Marton",
 		"icon": "",
 		"preview": "https://github.com/totaljs/parts/blob/main/pages/contactbutton/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "container",
+		"size": 340,
+		"group": "Content",
+		"name": "Container",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/container/preview.jpg?raw=true",
 		"color": "",
 		"version": "1"
 	},
@@ -161,6 +216,17 @@
 		"author": "Peter Širka",
 		"icon": "",
 		"preview": "https://github.com/totaljs/parts/blob/main/pages/headline/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "hero",
+		"size": 1983,
+		"group": "Content",
+		"name": "Hero",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/hero/preview.jpg?raw=true",
 		"color": "",
 		"version": "1"
 	},

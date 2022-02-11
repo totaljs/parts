@@ -1,5 +1,16 @@
 [
 	{
+		"id": "heroheading",
+		"size": 0,
+		"group": "",
+		"name": "",
+		"author": "",
+		"icon": "",
+		"preview": "",
+		"color": "",
+		"version": ""
+	},
+	{
 		"id": "alert2",
 		"size": 3367,
 		"group": "Content",

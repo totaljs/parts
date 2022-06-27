@@ -1,0 +1,37 @@
+<style>
+	.wh3 h3 { padding: 0; margin: 0; font-size: 20px; font-weight: bold; }
+</style>
+
+<body>
+	<h3></h3>
+</body>
+
+<script>
+
+	exports.id = 'h3';
+	exports.name = 'H3';
+	exports.version = 1;
+	exports.icon = 'far fa-heading';
+	exports.author = 'Total Avengers';
+	exports.version = '1';
+	exports.config = {};
+	exports.sortindex = 3;
+
+	exports.make = function(widget) {
+		widget.element.on('click', 'h3', function() {
+			widget.edit(this, {}, function(response) {
+				if (response.text) {
+					widget.change();
+					widget.end(response.key);
+				} else
+					widget.remove();
+			});
+		});
+
+		widget.on('focus', function() {
+			widget.element.find('h3').trigger('click');
+		});
+
+		widget.newbie && widget.emit('focus');
+	};
+</script>

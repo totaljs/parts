@@ -45,7 +45,8 @@ PATH.fs.readdir(TYPE, function(err, response) {
 			data.color = color ? evaluate(color[0]).color : '';
 			data.version = version ? evaluate(version[0]).version : '';
 
-			PATH.fs.writeFile('cdn/' + TYPE + '/' + data.id + '.html', response, NOOP);
+			// PATH.fs.writeFile('cdn/' + TYPE + '/' + data.id + '.html', response, NOOP);
+
 			arr.push(data);
 			next();
 		});

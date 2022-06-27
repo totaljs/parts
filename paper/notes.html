@@ -1,0 +1,37 @@
+<style>
+	.wnotes .content { font-size: 14px; color: #999; }
+</style>
+
+<body>
+	<div class="content"></div>
+</body>
+
+<script>
+
+	exports.id = 'notes';
+	exports.name = 'Notes';
+	exports.version = 1;
+	exports.icon = 'far fa-file-alt';
+	exports.author = 'Total Avengers';
+	exports.version = '1';
+	exports.config = {};
+	exports.sortindex = 1;
+
+	exports.make = function(widget) {
+		widget.element.on('click', '.content', function() {
+			widget.edit(this, { multiline: true }, function(response) {
+				if (response.text) {
+					widget.change();
+					widget.end(response.key);
+				} else
+					widget.remove();
+			});
+		});
+
+		widget.on('focus', function() {
+			widget.element.find('.content').trigger('click');
+		});
+
+		widget.newbie && widget.emit('focus');
+	};
+</script>

@@ -1,0 +1,47 @@
+<style>
+	.wcode pre { display: block; margin: 0; padding: 0; }
+	.wcode pre code { display: block; padding: 15px; background-color: #F0F0F0; border-radius: 8px; }
+</style>
+
+<body>
+	<pre><code></code></pre>
+</body>
+
+<script>
+
+	exports.id = 'code';
+	exports.name = 'Code';
+	exports.version = 1;
+	exports.icon = 'far far fa-file-code';
+	exports.author = 'Total Avengers';
+	exports.version = '1';
+	exports.config = {};
+	exports.sortindex = 10;
+
+	IMPORT('https://cdn.componentator.com/highlight.min@914.css');
+	IMPORT('https://cdn.componentator.com/highlight.min@914.js');
+
+	exports.make = function(widget) {
+
+		widget.element.on('click', 'code', function() {
+			var el = $(this);
+			var opt = {};
+			opt.html = el.text().encode();
+			opt.multiline = true;
+			widget.edit(el, opt, function(response) {
+				if (response.text) {
+					el.html(hljs.highlightAuto(response.text).value);
+					widget.change();
+					widget.end(response.key);
+				} else
+					widget.remove();
+			});
+		});
+
+		widget.on('focus', function() {
+			widget.element.find('code').trigger('click');
+		});
+
+		widget.newbie && widget.emit('focus');
+	};
+</script>

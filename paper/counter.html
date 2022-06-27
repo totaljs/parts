@@ -1,0 +1,126 @@
+<style>
+	.wcounter { position: relative; }
+	.wcounter table { margin: 5px 0 0; padding: 0; width: 100%; }
+	.wcounter table td { border: 1px solid #D0D0D0; padding: 6px 10px; }
+	.wcounter table td.number { text-align: right; width: 150px; font-family: Menlo, Consolas, monospace; font-size: 14px; }
+	.wcounter table td.number .unit { margin-left: 5px; color: #999; font-size: 12px; }
+	.wcounter table tfoot td.number { background-color: #F0F0F0; }
+	.wcounter .add { position: absolute; right: -20px; top: 8px; color: #68B25B; cursor: pointer; }
+</style>
+
+<body>
+	<div class="add"><i class="far fa-plus"></i></div>
+	<table>
+		<tbody></tbody>
+		<tfoot>
+			<tr>
+				<td style="border:0"></td>
+				<td class="number"><span class="value b">0</span><span class="unit edit">h</span></td>
+			</tr>
+		</tfoot>
+	</table>
+</body>
+
+<script>
+
+	exports.id = 'counter';
+	exports.name = 'Counter';
+	exports.version = 1;
+	exports.icon = 'far fa-calculator';
+	exports.author = 'Total Avengers';
+	exports.version = '1';
+	exports.config = {};
+	exports.sortindex = 5;
+
+	exports.make = function(widget) {
+
+		var isnew = false;
+
+		var check = function() {
+			if (!widget.element.find('tbody').find('tr').length)
+				widget.remove();
+		};
+
+		var recount = function() {
+			var arr = widget.element.find('tbody').find('.value');
+			var count = 0;
+			for (var el of arr) {
+				var num = $(el).text().trim();
+				switch (num.charAt(0)) {
+					case '-':
+						num = num.substring(1).parseFloat();
+						count = count - num;
+						break;
+					case '*':
+						num = num.substring(1).parseFloat();
+						count = count * num;
+						break;
+					case '/':
+						num = num.substring(1).parseFloat();
+						count = count / num;
+						break;
+					default:
+						count += num.parseFloat();
+						break;
+				}
+			}
+			widget.element.find('tfoot').find('.value').html(count + '');
+		};
+
+		var append = function(el) {
+
+			var id = widget.makeid();
+			var html = '<tr class="block" data-id="{0}"><td class="name edit" data-id="name"></td><td class="number"><span class="value edit" data-id="value">0</span><span class="unit edit" data-id="unit">h</span></td></tr>'.format(id);
+
+			if (el)
+				el.after(html);
+			else
+				widget.element.find('tbody').append(html);
+
+			var tr = widget.element.find('tr.block[data-id="{0}"]'.format(id));
+			var col = tr.find('.name');
+			col[0].$newbie = true;
+			col.trigger('click');
+		}
+
+		widget.element.on('click', '.add', function() {
+			setTimeout(append, 100);
+		});
+
+		widget.element.on('click', '.edit', function() {
+			var el = $(this);
+			var opt = {};
+			widget.edit(el, opt, function(response) {
+				if (response.text) {
+					var newbie = el[0].$newbie;
+					if (newbie)
+						delete el[0].$newbie;
+
+					var name = el.attrd('id');
+					if (name === 'value')
+						recount();
+
+					if (name === 'unit')
+						widget.element.find('.unit').text(response.text);
+
+					response.change && widget.change(newbie ? 'insert' : 'update', el.closest('tr'));
+
+					if (name === 'name') {
+						setTimeout(() => el.next().find('.value').trigger('click'), 100);
+						return;
+					}
+
+					if (response.key === 13 || response.key === 8)
+						setTimeout(append, 100, el.closest('tr'));
+
+				} else {
+					el.closest('tr').remove();
+					widget.end();
+				}
+				check();
+			});
+		});
+
+		widget.newbie && append();
+	};
+</script>

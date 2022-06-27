@@ -1,0 +1,63 @@
+<style>
+	.wol ol { padding: 0 0 0 17px; margin: 0; }
+	.wol ol div { padding-left: 10px; }
+</style>
+
+<body>
+	<ol></ol>
+</body>
+
+<script>
+
+	exports.id = 'ol';
+	exports.name = 'Numbered list';
+	exports.version = 1;
+	exports.icon = 'far fa-list-ol';
+	exports.author = 'Total Avengers';
+	exports.version = '1';
+	exports.config = {};
+	exports.sortindex = 6;
+
+	exports.make = function(widget, init) {
+
+		var isnew = false;
+
+		var check = function() {
+			if (!widget.element.find('li').length)
+				widget.remove();
+		};
+
+		var append = function(el) {
+			var id = widget.makeid();
+			var html = '<li class="block" data-id="{0}"><div></div></li>'.format(id);
+			if (el)
+				el.after(html);
+			else
+				widget.element.find('ol').append(html);
+			var li = widget.element.find('li.block[data-id="{0}"]'.format(id));
+			li[0].$newbie = true;
+			li.trigger('click');
+		}
+
+		widget.element.on('click', 'li', function() {
+			var li = $(this);
+			widget.edit(li.find('div'), { backslashremove: true, parent: li }, function(response) {
+				if (response.text) {
+					var newbie = li[0].$newbie;
+					if (newbie)
+						delete li[0].$newbie;
+					response.change && widget.change(newbie ? 'insert' : 'update', li);
+					if (response.key === 13 || response.key === 8)
+						setTimeout(append, 100, li);
+				} else {
+					li.remove();
+					widget.change('remove', li);
+					widget.end();
+				}
+				check();
+			});
+		});
+
+		widget.newbie && append();
+	};
+</script>

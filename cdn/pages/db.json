@@ -1,16 +1,5 @@
 [
 	{
-		"id": "heroheading",
-		"size": 0,
-		"group": "",
-		"name": "",
-		"author": "",
-		"icon": "",
-		"preview": "",
-		"color": "",
-		"version": ""
-	},
-	{
 		"id": "alert2",
 		"size": 3367,
 		"group": "Content",
@@ -29,6 +18,17 @@
 		"author": "Dodo Marton",
 		"icon": "",
 		"preview": "https://github.com/totaljs/parts/blob/main/pages/article/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "buttonsgroup",
+		"size": 1993,
+		"group": "Content",
+		"name": "Buttons group",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/buttonsgroup/preview.jpg?raw=true",
 		"color": "",
 		"version": "1"
 	},
@@ -128,6 +128,17 @@
 		"author": "Dodo Marton",
 		"icon": "",
 		"preview": "https://github.com/totaljs/parts/blob/main/pages/container/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "contentlist",
+		"size": 1843,
+		"group": "Content",
+		"name": "Content list",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/contentlist/preview.jpg?raw=true",
 		"color": "",
 		"version": "1"
 	},
@@ -242,6 +253,17 @@
 		"version": "1"
 	},
 	{
+		"id": "heroheading",
+		"size": 2811,
+		"group": "Content",
+		"name": "Hero heading",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/heroheading/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
 		"id": "image",
 		"size": 1723,
 		"group": "Content",
@@ -260,6 +282,17 @@
 		"author": "Dodo Marton",
 		"icon": "",
 		"preview": "https://github.com/totaljs/parts/blob/main/pages/imageheader/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "imgheadline",
+		"size": 3888,
+		"group": "Content",
+		"name": "Image headline",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/imgheadline/preview.jpg?raw=true",
 		"color": "",
 		"version": "1"
 	},
@@ -348,6 +381,17 @@
 		"author": "Dodo Marton",
 		"icon": "",
 		"preview": "https://github.com/totaljs/parts/blob/main/pages/logos/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "message",
+		"size": 1221,
+		"group": "Content",
+		"name": "Message",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/message/preview.jpg?raw=true",
 		"color": "",
 		"version": "1"
 	},

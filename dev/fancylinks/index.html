@@ -1,0 +1,77 @@
+<script total>
+	exports.id = 'fancylinks';
+	exports.name = 'Fancy Links';
+	exports.author = 'Dodo Marton';
+	exports.version = '1';
+	exports.group = 'Content';
+	exports.preview = 'https://github.com/totaljs/parts/blob/main/pages/fancylinks/preview.jpg?raw=true';
+	exports.config = { rounded: false };
+</script>
+
+<style>
+	.w-fancylinks a { display: block; padding: 30px; color: #333; transition: background-color .2s; }
+	.w-fancylinks a .image { height: 125px; overflow: hidden; }
+	.w-fancylinks a .image img { width: 100%; height: 100%; }
+	.w-fancylinks a:hover { text-decoration: none; background-color: #f0f0f0; }
+	.w-fancylinks a .content h2 { margin-bottom: 0; margin-top: 0; }
+	.w-fancylinks a .content p { color: gray; margin-top: 0; }
+	.w-fancylinks a .content { margin: 0 30px 0 0; }
+	.w-fancylinks-rounded a { border-radius: 10px; overflow: hidden; }
+	.w-fancylinks-rounded a .image { border-radius: 5px; }
+</style>
+
+<settings>
+	<div class="padding">
+		<div data---="configuration__?" class="invisible">
+			<script type="text/plain">
+				[
+					{
+						name: 'rounded',
+						text: 'Rounded corners',
+						type: 'boolean'
+					}
+				]
+			</script>
+
+			<script>
+				exports.save = function(config, el) {
+					var cls = 'w-fancylinks';
+					el.tclass(cls + '-rounded', config.rounded);
+				};
+			</script>
+		</div>
+	</div>
+</settings>
+
+<body>
+	<a href="#" class="CMS_edit CMS_attribute CMS_repeat">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="image">
+					<img class="CMS_edit CMS_remove img-responsive" data-cms-width="252" data-cms-height="125" />
+				</div>
+			</div>
+			<div class="col-sm-9">
+				<div class="content">
+					<h2 class="CMS_edit CMS-attribute">Heading</h2>
+					<p class="CMS_edit CMS_attribute">Lorem ipsum dolor sit amet</p>
+				</div>
+			</div>
+		</div>
+	</a>
+	<a href="#" class="CMS_edit CMS_attribute CMS_repeat CMS_remove">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="image">
+					<img class="CMS_edit CMS_remove img-responsive" data-cms-width="252" data-cms-height="125" />
+				</div>
+			</div>
+			<div class="col-sm-9">
+				<div class="content">
+					<h2 class="CMS_edit CMS-attribute">Heading</h2>
+					<p class="CMS_edit CMS_attribute">Lorem ipsum dolor sit amet</p>
+				</div>
+			</div>
+		</div>
+	</a>
+</body>

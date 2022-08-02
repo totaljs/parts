@@ -176,6 +176,127 @@
 		"version": "1"
 	},
 	{
+		"id": "fancybrick",
+		"size": 14658,
+		"group": "Content",
+		"name": "Fancy Brick",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/fancybrick/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "fancybutton",
+		"size": 3882,
+		"group": "Content",
+		"name": "Fancy Button",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/fancybutton/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "fancycards",
+		"size": 3321,
+		"group": "Content",
+		"name": "Fancy cards",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/fancycards/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "fancycarousel",
+		"size": 3356,
+		"group": "Content",
+		"name": "Fancy cards",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/fancycards/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "fancycover",
+		"size": 3537,
+		"group": "Content",
+		"name": "Fancy cover",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/fancycover/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "fancygallery",
+		"size": 54990,
+		"group": "Content",
+		"name": "Fancy gallery",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/fancygallery/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "fancyinfo",
+		"size": 3441,
+		"group": "Content",
+		"name": "Fancy Info",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/fancyinfo/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "fancylist",
+		"size": 2854,
+		"group": "Content",
+		"name": "Fancy list",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/fancylist/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "fancypricing",
+		"size": 13274,
+		"group": "Content",
+		"name": "Fancy Pricing",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/fancypricing/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "fancyproperties",
+		"size": 2963,
+		"group": "Content",
+		"name": "Fancy properties",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/fancyproperties/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
+		"id": "fancytabs",
+		"size": 3698,
+		"group": "Content",
+		"name": "Fancy Tabs",
+		"author": "Dodo Marton",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/fancytabs/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
 		"id": "features",
 		"size": 3880,
 		"group": "Content",

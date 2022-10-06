@@ -42,9 +42,9 @@ PATH.fs.readdir(TYPE, function(err, response) {
 		obj.preview = preview ? evaluate(preview[0]).preview : '';
 		obj.color = color ? evaluate(color[0]).color : '';
 		obj.version = version ? evaluate(version[0]).version : '';
-		obj.js = (parsed.js || '').trim();
-		obj.css = (parsed.css || '').trim();
-		obj.html = (parsed.html || '').trim();
+		obj.js = U.minify_js(parsed.js || '').trim();
+		obj.css = U.minify_css(parsed.css || '').trim();
+		obj.html = U.minify_html(parsed.html || '').trim();
 		arr.push(obj);
 	}
 

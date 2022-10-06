@@ -1,5 +1,5 @@
 <style>
-	.wh1 h1 { padding: 0 0 8px; margin: 0; font-size: 34px; font-weight: bold; border-bottom: 2px solid #D0D0D0; }
+	.wh1 h1 { padding: 0 0 8px; margin: 0; font-size: 34px; font-weight: bold; border-bottom: 2px solid #D0D0D0; min-height: 34px; }
 </style>
 
 <body>
@@ -12,13 +12,18 @@
 	exports.name = 'H1';
 	exports.version = 1;
 	exports.icon = 'far fa-heading';
-	exports.author = 'Total Avengers';
+	exports.author = 'Total.js';
 	exports.version = '1';
-	exports.config = {};
+	exports.config = { html: '' };
 	exports.sortindex = 1;
 
-	exports.make = function(widget) {
-		widget.element.on('click', 'h1', function() {
+	exports.make = function(widget, config, element) {
+
+		widget.save = function() {
+			return { html: element.find('h1').html() };
+		};
+
+		element.on('click', 'h1', function() {
 			widget.edit(this, {}, function(response) {
 				if (response.text) {
 					widget.change();
@@ -29,9 +34,11 @@
 		});
 
 		widget.on('focus', function() {
-			widget.element.find('h1').trigger('click');
+			element.find('h1').trigger('click');
 		});
 
 		widget.newbie && widget.emit('focus');
+		config.html && element.find('h1').html(config.html);
+
 	};
 </script>

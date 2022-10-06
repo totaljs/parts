@@ -1,0 +1,117 @@
+<style>
+	.wfiles { min-height: 5px; }
+	.wfiles .file { display: block; border-bottom: 1px solid #E0E0E0; padding: 5px 0; text-decoration: none; font-size: 14px; }
+	.wfiles .file > i { padding: 0 5px 0 0; color: #777; }
+	.wfiles .file > .size { color: #999; padding-top: 3px; font-size: 13px; float: right; }
+	.wfiles .add { margin: 5px 0 0 0; color: #68B25B; cursor: pointer; float: left; }
+	.wfiles .remove { float: right; color: red; cursor: pointer; margin: 3px 0 0 8px; font-size: 12px; }
+	.readonly .add { display: none; }
+	.readonly .remove { display: none; }
+</style>
+
+<body>
+	<div class="files">
+	</div>
+	<div class="add"><i class="far fa-plus"></i></div>
+	<div class="clearfix">&nbsp;</div>
+</body>
+
+<script>
+
+	exports.id = 'files';
+	exports.name = 'Files';
+	exports.version = 1;
+	exports.icon = 'far fa-upload';
+	exports.author = 'Total.js';
+	exports.version = '1';
+	exports.config = { items: [] };
+	exports.sortindex = 5;
+
+	exports.make = function(widget, config, element) {
+
+		var template = '<div class="file" data-id="{0}" data-ext="{4}"><span class="remove"><i class="fa fa-trash-alt"></i></span><span class="size">{3}</span><i class="far fa-file-alt"></i><a href="{1}" target="_blank"><span class="edit">{2}</span></a>';
+		var isnew = false;
+
+		var check = function() {
+			if (!element.find('.files').find('> .file').length)
+				widget.remove();
+		};
+
+		var append = function(file) {
+			var id = widget.makeid();
+			var mb = (file.size / 1024 / 1024).floor(1);
+			var html = template.format(id, file.url, file.name.encode(), mb + ' MB');
+			element.find('.files').append(html);
+		};
+
+		var upload = function() {
+			var opt = {};
+			opt.multiple = true;
+			opt.callback = function(files) {
+				for (var file of files)
+					append(file);
+			};
+			widget.upload(opt);
+		};
+
+		widget.save = function() {
+
+			var arr = [];
+			var elements = element.find('.file');
+
+			for (var el of elements) {
+				el = $(el);
+				var obj = {};
+				obj.id = el.attrd('id');
+				obj.url = el.find('a').attr('href');
+				obj.size = el.find('.size').text();
+				obj.name = el.find('.edit').html();
+				obj.ext = el.attrd('ext');
+				arr.push(obj);
+			}
+
+			return { items: arr };
+		};
+
+		element.on('click', '.add', function() {
+			if (!widget.readonly)
+				setTimeout(upload, 100);
+		});
+
+		element.on('click', '.remove', function(e) {
+			e.preventDefault();
+			$(this).closest('.file').remove();
+		});
+
+		/*
+		element.on('click', '.edit', function(e) {
+
+			e.stopPropagation();
+			e.preventDefault();
+
+			if (widget.readonly)
+				return;
+
+			var el = $(this);
+			var opt = {};
+
+			widget.edit(el, opt, function(response) {
+				if (response.text) {
+					response.change && widget.change(widget.newbie ? 'insert' : 'update', el.closest('.file'));
+				} else {
+					el.closest('.file').remove();
+					widget.end();
+				}
+				check();
+			});
+		});
+		*/
+
+		widget.newbie && upload();
+
+		var builder = [];
+		for (var item of config.items)
+			builder.push(template.format(item.id, item.url, item.name, item.size, item.ext));
+		builder.length && element.find('.files').html(builder.join(''));
+	};
+</script>

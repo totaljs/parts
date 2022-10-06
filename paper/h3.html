@@ -12,13 +12,18 @@
 	exports.name = 'H3';
 	exports.version = 1;
 	exports.icon = 'far fa-heading';
-	exports.author = 'Total Avengers';
+	exports.author = 'Total.js';
 	exports.version = '1';
-	exports.config = {};
+	exports.config = { html: '' };
 	exports.sortindex = 3;
 
-	exports.make = function(widget) {
-		widget.element.on('click', 'h3', function() {
+	exports.make = function(widget, config, element) {
+
+		widget.save = function() {
+			return { html: element.find('h3').html() };
+		};
+
+		element.on('click', 'h3', function() {
 			widget.edit(this, {}, function(response) {
 				if (response.text) {
 					widget.change();
@@ -29,9 +34,11 @@
 		});
 
 		widget.on('focus', function() {
-			widget.element.find('h3').trigger('click');
+			element.find('h3').trigger('click');
 		});
 
 		widget.newbie && widget.emit('focus');
+		config.html && element.find('h1').html(config.html);
+
 	};
 </script>

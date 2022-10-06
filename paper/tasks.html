@@ -1,0 +1,118 @@
+<style>
+	.wtasks figure { padding: 0; margin: 0 0 3px 0; min-height: 20px; display: block; }
+	.wtasks figure .checkbox { width: 20px; height: 20px; border: 1px solid #D0D0D0; line-height: 18px; color: #FFF; text-align: center; float: left; border-radius: var(--radius); margin: 1px 0 0; font-size: 12px; }
+	.wtasks figure .checkbox i { visibility: hidden; }
+	.wtasks figure .text { margin-left: 30px; }
+	.wtasks figure.checked .checkbox { background-color: var(--color); border-color: var(--color); }
+	.wtasks figure.checked .checkbox i { visibility: visible; }
+</style>
+
+<body>
+	<div class="wtasks-items"></div>
+</body>
+
+<script>
+
+	exports.id = 'tasks';
+	exports.name = 'Tasks';
+	exports.version = 1;
+	exports.icon = 'far fa-check-square';
+	exports.author = 'Total.js';
+	exports.version = '1';
+	exports.config = { items: [] };
+	exports.sortindex = 7;
+
+	exports.make = function(widget, config, element) {
+
+		var template = Tangular.compile('<figure data-id="{{ id }}"{{ if checked }} class="checked"{{ fi }}><span class="checkbox"><i class="fas fa-check"></i></span><div class="text">{{ name | raw }}</div></figure>');
+		var isnew = false;
+		var isend = false;
+
+		widget.save = function() {
+
+			var arr = [];
+
+			var elements = element.find('figure');
+			for (var el of elements) {
+				el = $(el);
+				arr.push({ id: el.attrd('id'), name: el.find('.text').html(), checked: el.hclass('checked') });
+			}
+
+			return { items: arr };
+		};
+
+		var check = function() {
+			if (!element.find('figure').length)
+				widget.remove();
+		};
+
+		var append = function(el) {
+
+			var id = widget.makeid();
+			var html = template({ id: id, checked: false, name: '' });
+
+			if (el)
+				el.after(html);
+			else
+				element.find('.wtasks-items').append(html);
+
+			var figure = element.find('figure[data-id="{0}"]'.format(id));
+			figure[0].$newbie = true;
+			figure.trigger('click');
+		};
+
+		element.on('click', '.checkbox', function(e) {
+
+			e.preventDefault();
+			e.stopPropagation();
+
+			if (!config.readonly || config.readonly === 1) {
+				var figure = $(this).parent();
+				figure.tclass('checked');
+				widget.change('update', figure);
+			}
+
+		});
+
+		element.on('click', 'figure', function() {
+
+			if (widget.readonly)
+				return;
+
+			var figure = $(this);
+			var opt = {};
+			opt.backslashremove = true;
+			opt.parent = figure;
+			opt.cursor = isend ? 'end' : 'beg';
+			widget.edit(figure.find('div'), opt, function(response) {
+				if (response.text) {
+					var newbie = figure[0].$newbie;
+					if (newbie)
+						delete figure[0].$newbie;
+					response.change && widget.change(newbie ? 'insert' : 'update', figure);
+					if (response.key === 13 || response.key === 8)
+						setTimeout(append, 100, figure);
+					else if (response.key === 9) {
+						var n = figure.next();
+						if (n.length) {
+							isend = true;
+							setTimeout(() => n.trigger('click'), 100);
+						}
+					}
+				} else {
+					figure.remove();
+					widget.change('remove', figure);
+					widget.end();
+				}
+				check();
+			});
+		});
+
+		widget.newbie && append();
+		var builder = [];
+		for (var item of config.items)
+			builder.push(template(item));
+		if (builder.length)
+			element.find('.wtasks-items').html(builder.join(''));
+	};
+</script>

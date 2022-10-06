@@ -12,13 +12,18 @@
 	exports.name = 'Notes';
 	exports.version = 1;
 	exports.icon = 'far fa-file-alt';
-	exports.author = 'Total Avengers';
+	exports.author = 'Total.js';
 	exports.version = '1';
-	exports.config = {};
+	exports.config = { html: '' };
 	exports.sortindex = 1;
 
-	exports.make = function(widget) {
-		widget.element.on('click', '.content', function() {
+	exports.make = function(widget, config, element) {
+
+		widget.save = function() {
+			return { html: element.find('.content').html() };
+		};
+
+		element.on('click', '.content', function() {
 			widget.edit(this, { multiline: true }, function(response) {
 				if (response.text) {
 					widget.change();
@@ -29,9 +34,10 @@
 		});
 
 		widget.on('focus', function() {
-			widget.element.find('.content').trigger('click');
+			element.find('.content').trigger('click');
 		});
 
 		widget.newbie && widget.emit('focus');
+		config.html && element.find('.content').html(config.html);
 	};
 </script>

@@ -1,6 +1,6 @@
 <style>
-	.wcode pre { display: block; margin: 0; padding: 0; }
-	.wcode pre code { display: block; padding: 15px; background-color: #F0F0F0; border-radius: 8px; }
+	.wcode pre { display: block; margin: 0; padding: 0; padding: 15px; background-color: #F0F0F0; border-radius: 8px; }
+	.wcode pre code { display: inline-block; position: relative; tab-size: 2; }
 </style>
 
 <body>
@@ -13,21 +13,24 @@
 	exports.name = 'Code';
 	exports.version = 1;
 	exports.icon = 'far far fa-file-code';
-	exports.author = 'Total Avengers';
+	exports.author = 'Total.js';
 	exports.version = '1';
-	exports.config = {};
+	exports.config = { code: '' };
 	exports.sortindex = 10;
+	exports.import = ['https://cdn.componentator.com/highlight.min@914.css', 'https://cdn.componentator.com/highlight.min@914.js'];
 
-	IMPORT('https://cdn.componentator.com/highlight.min@914.css');
-	IMPORT('https://cdn.componentator.com/highlight.min@914.js');
+	exports.make = function(widget, config, element) {
 
-	exports.make = function(widget) {
+		widget.save = function() {
+			return { code: element.find('code').text() };
+		};
 
-		widget.element.on('click', 'code', function() {
+		element.on('click', 'code', function() {
 			var el = $(this);
 			var opt = {};
 			opt.html = el.text().encode();
 			opt.multiline = true;
+			opt.tabs = true;
 			widget.edit(el, opt, function(response) {
 				if (response.text) {
 					el.html(hljs.highlightAuto(response.text).value);
@@ -39,9 +42,13 @@
 		});
 
 		widget.on('focus', function() {
-			widget.element.find('code').trigger('click');
+			element.find('code').trigger('click');
 		});
 
 		widget.newbie && widget.emit('focus');
+
+		if (config.code)
+			element.find('code').html(hljs.highlightAuto(config.code).value);
+
 	};
 </script>

@@ -44,9 +44,10 @@
 			var arr = [];
 
 			for (var row of rows) {
-				var cols = $(row).find('td');
+				row = $(row);
+				var cols = row.find('td');
 				var val = $(cols[1]);
-				arr.push({ name: cols[0].innerHTML, value: val.find('.value').html(), unit: val.find('.unit').html() });
+				arr.push({ id: row.attrd('id'), name: cols[0].innerHTML, value: val.find('.value').html(), unit: val.find('.unit').html() });
 			}
 
 			return { items: arr };
@@ -145,7 +146,7 @@
 
 		var builder = [];
 		for (var item of config.items)
-			builder.push(template.format(widget.makeid(), item.name, item.value, item.unit));
+			builder.push(template.format(item.id, item.name, item.value, item.unit));
 
 		if (builder.length) {
 			element.find('tbody').append(builder.join(''));

@@ -28,7 +28,7 @@
 
 			var elements = element.find('li');
 			for (var el of elements)
-				arr.push(el.children[0].innerHTML);
+				arr.push({ id: el.getAttribute('data-id'), name: el.children[0].innerHTML });
 
 			return { items: arr };
 		};
@@ -73,7 +73,8 @@
 
 		var builder = [];
 		for (var item of config.items)
-			builder.push('<li data-id="{0}"><div>{1}</div></li>'.format(widget.makeid(), item));
+			builder.push('<li data-id="{0}"><div>{1}</div></li>'.format(item.id, item.name));
+
 		if (builder.length)
 			element.find('ul').html(builder.join(''));
 

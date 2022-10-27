@@ -1,5 +1,16 @@
 [
 	{
+		"id": "columns3",
+		"size": 528,
+		"group": "Content",
+		"name": "3 Columns",
+		"author": "Peter Širka",
+		"icon": "",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/columns3/preview.jpg?raw=true",
+		"color": "",
+		"version": "1"
+	},
+	{
 		"id": "alert2",
 		"size": 3367,
 		"group": "Content",
@@ -166,12 +177,12 @@
 	},
 	{
 		"id": "expansionpanel2",
-		"size": 2220,
+		"size": 2219,
 		"group": "Content",
 		"name": "Expansion Panel 2",
 		"author": "Dodo Marton",
 		"icon": "",
-		"preview": "https://github.com/totaljs/parts/blob/main/pages/expanstionpanel2/preview.jpg?raw=true",
+		"preview": "https://github.com/totaljs/parts/blob/main/pages/expansionpanel2/preview.jpg?raw=true",
 		"color": "",
 		"version": "1"
 	},
@@ -298,7 +309,7 @@
 	},
 	{
 		"id": "features",
-		"size": 3880,
+		"size": 3821,
 		"group": "Content",
 		"name": "Features",
 		"author": "Dodo Marton",

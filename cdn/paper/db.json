@@ -144,6 +144,18 @@
 		"html": "<div class=\"image\"><div class=\"empty\">Click for upload</div></div><div class=\"alt\">Description</div>"
 	},
 	{
+		"name": "Indent",
+		"group": "",
+		"author": "Total.js",
+		"icon": "ti ti-arrow-right",
+		"preview": "",
+		"color": "",
+		"version": 1,
+		"js": "exports.id='indent';exports.name='Indent';exports.version=1;exports.icon='ti ti-arrow-right';exports.author='Total.js';exports.version='1';exports.config={widgets:[]};exports.sortindex=5;exports.make=function(widget,config,element){var column=element[0].children[0];widget.save=function(){var obj={};obj.widgets=widget.widgets.save(column);return obj};$(column).on('click',function(e){if(e.target.classList.contains('column')){e.stopPropagation();e.preventDefault();widget.widgets.append(this)}});if(widget.newbie)widget.widgets.append(column);else widget.widgets.load(column,config.widgets)};",
+		"css": ".paper-indent>.column{min-height:20px;margin-left:25px;padding-top:5px}",
+		"html": "<div class=\"column\"></div>"
+	},
+	{
 		"name": "Layout",
 		"group": "",
 		"author": "Total.js",

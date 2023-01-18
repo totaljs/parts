@@ -12,7 +12,7 @@
 <body>
 	<div class="files">
 	</div>
-	<div class="add"><i class="far fa-plus"></i></div>
+	<div class="add"><i class="ti ti-plus"></i></div>
 	<div class="clearfix">&nbsp;</div>
 </body>
 
@@ -21,7 +21,7 @@
 	exports.id = 'files';
 	exports.name = 'Files';
 	exports.version = 1;
-	exports.icon = 'far fa-upload';
+	exports.icon = 'ti ti-upload';
 	exports.author = 'Total.js';
 	exports.version = '1';
 	exports.config = { items: [] };
@@ -29,7 +29,7 @@
 
 	exports.make = function(widget, config, element) {
 
-		var template = '<div class="file" data-id="{0}" data-ext="{4}"><span class="remove"><i class="fa fa-trash-alt"></i></span><span class="size">{3}</span><i class="far fa-file-alt"></i><a href="{1}" target="_blank"><span class="edit">{2}</span></a>';
+		var template = '<div class="file" data-id="{0}" data-ext="{4}"><span class="remove"><i class="ti ti-remove"></i></span><span class="size">{3}</span><i class="ti ti-file"></i><a href="{1}" target="_blank"><span class="edit">{2}</span></a></div>';
 		var isnew = false;
 
 		var check = function() {
@@ -50,6 +50,7 @@
 			opt.callback = function(files) {
 				for (var file of files)
 					append(file);
+				widget.change();
 			};
 			widget.upload(opt);
 		};

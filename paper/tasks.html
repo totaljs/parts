@@ -16,7 +16,7 @@
 	exports.id = 'tasks';
 	exports.name = 'Tasks';
 	exports.version = 1;
-	exports.icon = 'far fa-check-square';
+	exports.icon = 'ti ti-check-square';
 	exports.author = 'Total.js';
 	exports.version = '1';
 	exports.config = { items: [] };
@@ -24,7 +24,7 @@
 
 	exports.make = function(widget, config, element) {
 
-		var template = Tangular.compile('<figure data-id="{{ id }}"{{ if checked }} class="checked"{{ fi }}><span class="checkbox"><i class="fas fa-check"></i></span><div class="text">{{ name | raw }}</div></figure>');
+		var template = Tangular.compile('<figure data-id="{{ id }}"{{ if checked }} class="checked"{{ fi }}><span class="checkbox"><i class="ti ti-check"></i></span><div class="text">{{ name | raw }}</div></figure>');
 		var isnew = false;
 		var isend = false;
 

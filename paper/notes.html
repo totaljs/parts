@@ -1,5 +1,6 @@
 <style>
 	.paper-notes .content { font-size: 14px; color: #999; }
+	.paper-notes .content a { color: #777; }
 </style>
 
 <body>
@@ -23,7 +24,11 @@
 			return { html: element.find('.content').html() };
 		};
 
-		element.on('click', '.content', function() {
+		element.on('click', '.content', function(e) {
+
+			if (!widget.iseditable(e.target))
+				return;
+
 			widget.edit(this, { multiline: true }, function(response) {
 				if (response.text) {
 					widget.change();

@@ -51,11 +51,11 @@
 			var opt = {};
 			opt.element = $(this);
 			opt.callback = function(val) {
-				opt.element.rclass2('fa').aclass(val);
+				opt.element.rclass2('ti').aclass(val);
 				element.attrd('icon', val);
 				widget.change('update');
 			};
-			SETTER('faicons/show', opt);
+			SETTER('icons/show', opt);
 		});
 
 		element.on('click', '.color', function() {

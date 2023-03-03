@@ -1,0 +1,50 @@
+<style>
+	.CLASS .config { position: absolute; margin: 8px 0 0 -25px; cursor: pointer; color: #A0A0A0; }
+</style>
+
+<script>
+	exports.id = 'table';
+	exports.name = 'Table';
+	exports.version = 1;
+	exports.icon = 'ti ti-table';
+	exports.author = 'Total.js';
+	exports.version = '1';
+	exports.config = { header: true, footer: false };
+	exports.sortindex = 5;
+
+	exports.make = function(widget, config, element) {
+
+		console.log(widget, arguments);
+
+		widget.save = function() {
+			// configuration
+			return CLONE(config);
+		};
+
+		element.append('<span class="config"><i class="ti ti-wrench"></i></span><table class="table table-bordered nmb"><thead><tr><th>Header</th></tr></thead><tbody><tr><td>Header</td></tbody></tr></table><div class="help"><span class="link"><i class="ti ti-plus-circle green"></i>@(Add row)</span></div>');
+
+		if (widget.newbie) {
+			widget.change();
+			widget.next();
+		}
+
+		element.on('click', '.config', function() {
+
+			if (widget.readonly)
+				return;
+
+			var opt = {};
+			opt.element = this;
+			opt.offsetY = 5;
+			opt.items = [];
+			opt.items.push({ id: 'header', name: '@(Show header)', type: 'boolean', value: config.header == true });
+			opt.items.push({ id: 'footer', name: '@(Show footer)', type: 'boolean', value: config.footer == true });
+			opt.callback = function(cfg) {
+				COPY(cfg, config);
+			};
+			SETTER('inlineproperties/show', opt);
+		});
+
+	};
+
+</script>

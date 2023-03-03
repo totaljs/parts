@@ -29,7 +29,7 @@
 
 	exports.make = function(widget, config, element) {
 
-		var template = '<div class="file" data-id="{0}" data-ext="{4}"><span class="remove"><i class="ti ti-remove"></i></span><span class="size">{3}</span><i class="ti ti-file"></i><a href="{1}" target="_blank"><span class="edit">{2}</span></a></div>';
+		var template = '<div class="file" data-id="{0}" data-ext="{4}"><span class="remove"><i class="ti ti-remove"></i></span><span class="size">{3}</span><i class="ti ti-file"></i><a href="{1}" target="_blank"><span class="name">{2}</span></a></div>';
 		var isnew = false;
 
 		var check = function() {
@@ -40,7 +40,7 @@
 		var append = function(file) {
 			var id = widget.makeid();
 			var mb = (file.size / 1024 / 1024).floor(1);
-			var html = template.format(id, file.url, file.name.encode(), mb + ' MB');
+			var html = template.format(id, file.url, file.name.encode(), mb + ' MB', file.ext);
 			element.find('.files').append(html);
 		};
 
@@ -66,11 +66,12 @@
 				obj.id = el.attrd('id');
 				obj.url = el.find('a').attr('href');
 				obj.size = el.find('.size').text();
-				obj.name = el.find('.edit').html();
+				obj.name = el.find('.name').html();
 				obj.ext = el.attrd('ext');
 				arr.push(obj);
 			}
 
+			console.log(arr);
 			return { items: arr };
 		};
 
@@ -82,31 +83,8 @@
 		element.on('click', '.remove', function(e) {
 			e.preventDefault();
 			$(this).closest('.file').remove();
+			widget.change();
 		});
-
-		/*
-		element.on('click', '.edit', function(e) {
-
-			e.stopPropagation();
-			e.preventDefault();
-
-			if (widget.readonly)
-				return;
-
-			var el = $(this);
-			var opt = {};
-
-			widget.edit(el, opt, function(response) {
-				if (response.text) {
-					response.change && widget.change(widget.newbie ? 'insert' : 'update', el.closest('.file'));
-				} else {
-					el.closest('.file').remove();
-					widget.end();
-				}
-				check();
-			});
-		});
-		*/
 
 		widget.newbie && upload();
 

@@ -23,7 +23,11 @@
 			return { html: element.find('h2').html() };
 		};
 
-		element.on('click', 'h2', function() {
+		element.on('click', 'h2', function(e) {
+
+			if (!widget.iseditable(e.target))
+				return;
+
 			widget.edit(this, {}, function(response) {
 				if (response.text) {
 					widget.change();

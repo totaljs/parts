@@ -1,5 +1,5 @@
 <style>
-	.paper-br { height: 5px; }
+	.CLASS { height: 5px; }
 </style>
 
 <script>
@@ -12,8 +12,19 @@
 	exports.config = {};
 	exports.sortindex = 5;
 
-	exports.make = function(widget) {
-		widget.newbie && widget.next();
+	exports.make = function(widget, config, element) {
+
+		widget.save = function() {
+			return { is: 1 };
+		};
+
+		element.append('<span></span>');
+
+		if (widget.newbie) {
+			widget.change();
+			widget.next();
+		}
+
 	};
 
 </script>

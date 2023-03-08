@@ -1,6 +1,6 @@
 <style>
-	.paper-notes .content { font-size: 14px; color: #999; }
-	.paper-notes .content a { color: #777; }
+	.CLASS .content { font-size: 14px; color: #999; }
+	.CLASS .content a { color: #777; }
 </style>
 
 <body>
@@ -26,8 +26,13 @@
 
 		element.on('click', '.content', function(e) {
 
+			if (widget.readonly)
+				return;
+
 			if (!widget.iseditable(e.target))
 				return;
+
+			e.stopPropagation();
 
 			widget.edit(this, { multiline: true }, function(response) {
 				if (response.text) {
@@ -39,6 +44,10 @@
 		});
 
 		widget.on('focus', function() {
+
+			if (widget.readonly)
+				return;
+
 			element.find('.content').trigger('click');
 		});
 

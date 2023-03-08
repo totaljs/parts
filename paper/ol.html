@@ -1,6 +1,6 @@
 <style>
-	.paper-ol ol { padding: 0 0 0 17px; margin: 0; }
-	.paper-ol ol div { padding-left: 10px; }
+	.CLASS ol { padding: 0 0 0 17px; margin: 0; }
+	.CLASS ol div { padding-left: 10px; }
 </style>
 
 <body>
@@ -40,6 +40,10 @@
 		};
 
 		var append = function(el) {
+
+			if (widget.readonly)
+				return;
+
 			var id = widget.makeid();
 			var html = '<li data-id="{0}"><div></div></li>'.format(id);
 			if (el)
@@ -51,7 +55,13 @@
 			li.trigger('click');
 		};
 
-		element.on('click', 'li', function() {
+		element.on('click', 'li', function(e) {
+
+			if (widget.readonly)
+				return;
+
+			e.stopPropagation();
+
 			var li = $(this);
 			widget.edit(li.find('div'), { backslashremove: true, parent: li }, function(response) {
 				if (response.text) {

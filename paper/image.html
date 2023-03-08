@@ -1,6 +1,6 @@
 <style>
-	.paper-image .image > div { background-color: #F0F0F0; padding: 50px 20px; border-radius: var(--radius); text-align: center; color: #888; }
-	.paper-image .alt { min-height: 24px; margin-top: 10px; font-size: 12px; color: #999; }
+	.CLASS .image > div { background-color: #F0F0F0; padding: 50px 20px; border-radius: var(--radius); text-align: center; color: #888; }
+	.CLASS .alt { min-height: 24px; margin-top: 10px; font-size: 12px; color: #999; }
 </style>
 
 <body>
@@ -25,10 +25,12 @@
 
 		var template = '<img src="{0}" class="img-responsive" loading="lazy" alt="{1}" />';
 
-		var upload = function() {
+		var upload = function(e) {
 
 			if (widget.readonly)
 				return;
+
+			e && e.stopPropagation();
 
 			var opt = {};
 			opt.accept = 'image/*';
@@ -47,10 +49,12 @@
 			return { url: img.attr('src'), name: img.attr('alt'), alt: alt.html() }
 		};
 
-		element.on('click', '.alt', function() {
+		element.on('click', '.alt', function(e) {
 
 			if (widget.readonly)
 				return;
+
+			e.stopPropagation();
 
 			widget.edit(this, {}, function(response) {
 				if (response.text) {

@@ -36,7 +36,7 @@
 	exports.make = function(widget, config, element) {
 
 		var isnew = false;
-		var template = '<tr data-id="{0}"><td class="name edit" data-id="name">{1}</td><td class="number"><span class="value edit" data-id="value">{2}</span><span class="unit edit" data-id="unit">{3}</span></td></tr>';
+		var template = '<tr data-id="{0}"><td class="name editable" data-id="name">{1}</td><td class="number"><span class="value editable" data-id="value">{2}</span><span class="unit editable" data-id="unit">{3}</span></td></tr>';
 
 		widget.save = function() {
 
@@ -86,6 +86,9 @@
 
 		var append = function(el) {
 
+			if (widget.readonly)
+				return;
+
 			var id = widget.makeid();
 			var html = template.format(id, '', '', 'h');
 
@@ -100,11 +103,18 @@
 			col.trigger('click');
 		};
 
-		element.on('click', '.add', function() {
+		element.on('click', '.add', function(e) {
+			e.stopPropagation();
 			setTimeout(append, 100);
 		});
 
-		element.on('click', '.edit', function() {
+		element.on('click', '.editable', function(e) {
+
+			if (widget.readonly)
+				return;
+
+			e.stopPropagation();
+
 			var el = $(this);
 			var opt = {};
 

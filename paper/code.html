@@ -1,6 +1,6 @@
 <style>
-	.paper-code pre { display: block; margin: 0; padding: 0; padding: 15px; background-color: #F0F0F0; border-radius: 8px; }
-	.paper-code pre code { display: inline-block; position: relative; tab-size: 4; width: 100% }
+	.CLASS pre { display: block; margin: 0; padding: 0; padding: 15px; background-color: #F0F0F0; border-radius: 8px; }
+	.CLASS pre code { display: inline-block; position: relative; tab-size: 4; width: 100% }
 </style>
 
 <body>
@@ -25,7 +25,13 @@
 			return { code: element.find('code').text() };
 		};
 
-		element.on('click', 'code', function() {
+		element.on('click', 'code', function(e) {
+
+			if (widget.readonly)
+				return;
+
+			e.stopPropagation();
+
 			var el = $(this);
 			var opt = {};
 			opt.html = el.text().encode();

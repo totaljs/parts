@@ -28,10 +28,12 @@
 			widget.next();
 		}
 
-		element.on('click', '.config', function() {
+		element.on('click', '.config', function(e) {
 
 			if (widget.readonly)
 				return;
+
+			e.stopPropagation();
 
 			var opt = {};
 			opt.element = this;

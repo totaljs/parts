@@ -1,6 +1,6 @@
 <style>
-	.paper-ul ul { padding: 0 0 0 17px; margin: 0; }
-	.paper-ul ul div { padding-left: 10px; }
+	.CLASS ul { padding: 0 0 0 17px; margin: 0; }
+	.CLASS ul div { padding-left: 10px; }
 </style>
 
 <body>
@@ -50,7 +50,8 @@
 			li.trigger('click');
 		};
 
-		element.on('click', 'li', function() {
+		element.on('click', 'li', function(e) {
+			e.stopPropagation();
 			var li = $(this);
 			widget.edit(li.find('div'), { backslashremove: true, parent: li }, function(response) {
 				if (response.text) {

@@ -1,5 +1,5 @@
 <style>
-	.paper-indent > .column { min-height: 20px; margin-left: 25px; padding-top: 5px; }
+	.CLASS > .column { min-height: 20px; margin-left: 25px; padding-top: 5px; }
 </style>
 
 <body>
@@ -27,6 +27,10 @@
 		};
 
 		$(column).on('click', function(e) {
+
+			if (widget.readonly)
+				return;
+
 
 			if (e.target.classList.contains('column')) {
 				e.stopPropagation();

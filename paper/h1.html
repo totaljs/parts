@@ -1,5 +1,5 @@
 <style>
-	.paper-h1 h1 { padding: 0 0 8px; margin: 0; font-size: 34px; font-weight: bold; border-bottom: 2px solid #D0D0D0; min-height: 34px; }
+	.CLASS h1 { padding: 0 0 8px; margin: 0; font-size: 34px; font-weight: bold; border-bottom: 2px solid #D0D0D0; min-height: 34px; }
 </style>
 
 <body>
@@ -25,8 +25,13 @@
 
 		element.on('click', 'h1', function(e) {
 
+			if (widget.readonly)
+				return;
+
 			if (!widget.iseditable(e.target))
 				return;
+
+			e.stopPropagation();
 
 			widget.edit(this, {}, function(response) {
 				if (response.text) {

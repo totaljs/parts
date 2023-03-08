@@ -25,8 +25,13 @@
 
 		element.on('click', 'h3', function(e) {
 
+			if (widget.readonly)
+				return;
+
 			if (!widget.iseditable(e.target))
 				return;
+
+			e.stopPropagation();
 
 			widget.edit(this, {}, function(response) {
 				if (response.text) {
